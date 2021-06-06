@@ -39,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="#FFFFFF"
-                android:drawableLeft="@drawable/lock"
+                android:drawableLeft="@drawable/mail"
                 android:drawablePadding="20dp"
                 android:ems="10"
                 android:hint="Email Address"
@@ -70,7 +70,7 @@
                 android:id="@+id/btnsignup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="DON'T HAVE AN ACCOUNT ? SIGN UP !!" />
+                android:text="DON'T HAVE AN ACCOUNT YET ? SIGN UP !!" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
