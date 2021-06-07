@@ -3,6 +3,11 @@ package com.example.final_project;
 public class User {
     private  String name, email , pass;
 
+    public User(){
+
+
+    }
+
     public String getName() {
         return name;
     }
