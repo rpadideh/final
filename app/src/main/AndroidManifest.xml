@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Final_project">
-        <activity android:name=".signupActivity"></activity>
+        <activity android:name=".dashboardActivity"></activity>
+        <activity android:name=".signupActivity" />
         <activity android:name=".loginActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
