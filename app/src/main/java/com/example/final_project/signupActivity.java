@@ -31,7 +31,7 @@ public class signupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        Button btnlogin2 = findViewById(R.id.btnsignup);
+        Button btnlogin2 = findViewById(R.id.btnlogin2);
         btnlogin2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +46,7 @@ public class signupActivity extends AppCompatActivity {
         password=findViewById(R.id.txtpass2);
         name=findViewById(R.id.txtname);
 
-        login2=findViewById(R.id.btnlogin2);
+       // login2=findViewById(R.id.btnlogin2);
         signup2=findViewById(R.id.btnsignup2);
 
         signup2.setOnClickListener(new View.OnClickListener() {

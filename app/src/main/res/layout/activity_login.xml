@@ -63,7 +63,7 @@
                 android:textColorHint="#8F8F8F" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/loginbtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="LOGIN !!" />
