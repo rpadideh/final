@@ -14,48 +14,48 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabl"
-        android:layout_width="403dp"
-        android:layout_height="53dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023">
+        app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab_wallet"
+            android:id="@+id/tbitem_wallet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/wallet"
             android:text="بودجه" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab_used"
+            android:id="@+id/tbitem_used"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/dollar"
             android:text="هزینه" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab_home"
+            android:id="@+id/tbitem_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/home"
             android:text="خانه" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab_income"
+            android:id="@+id/tbitem_income"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/growth"
             android:text="درآمد" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab_logout"
+            android:id="@+id/tbitem_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/logout"
             android:text="خروج" />
     </com.google.android.material.tabs.TabLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

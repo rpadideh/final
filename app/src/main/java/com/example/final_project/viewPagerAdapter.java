@@ -1,43 +1,47 @@
 package com.example.final_project;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import java.util.ArrayList;
-import java.util.List;
+class PagerAdapter extends FragmentStatePagerAdapter
+{
 
-public class viewPagerAdapter extends FragmentPagerAdapter {
-    private final List<Fragment> frgList = new ArrayList<>();
-    private final List<String> titleList = new ArrayList<>();
-    public viewPagerAdapter(FragmentManager fm) {
-        super(fm);
+    private final  int pageCount=4;
+    private String[] tabTitles =new  String[] {"wallet","used","home","income","logout"};
+    PagerAdapter(@NonNull FragmentManager fm) {
+        super ( fm ,BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT );
     }
-
-
-    @Nullable
+    @NonNull
     @Override
-    public CharSequence getPageTitle(int position) {
-        return titleList.get(position);
+    public Fragment getItem(int position){
+        switch (position) {
+            case 0:
+                return new walletfragment ( );
+            case 1:
+                return new usedfragment( );
+            case 2:
+                return new homefragment( );
+            case 3:
+                return new incomefragment( );
+            case 4:
+                return new logoutfragment( );
+            default:
+
+                return null;
+        }
     }
-
-
     @Override
-    public Fragment getItem(int position) {
-        return frgList.get(position);
+    public  int getCount(){
+        return pageCount;
     }
-
+    @NonNull
     @Override
-    public int getCount() {
-        return titleList.size();
+    public  CharSequence getPageTitle(int position){
+        return  tabTitles[position];
     }
-
-    public void addFrg (Fragment frg,String title){
-        frgList.add(frg);
-        titleList.add(title);
-    }
-
 }
+
+
 
