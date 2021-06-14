@@ -3,6 +3,7 @@ package com.example.final_project;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.content.Context;
@@ -15,47 +16,35 @@ import android.view.View.OnTouchListener;
 
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 public class dashboardActivity extends AppCompatActivity {
 
+
+    TabLayout tbLayout;
+    ViewPager2 vPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        BottomNavigationView btmnav=findViewById(R.id.btm_nav);
-        btmnav.setOnNavigationItemSelectedListener(navlistener);
+
+        vPager = findViewById(R.id.viewpager2);
+        tbLayout = findViewById(R.id.tabl);
+
+
+
+        vPager = findViewById(R.id.viewpager2);
+        tbLayout = findViewById(R.id.tabl);
+        viewPagerAdapter adapter =new viewPagerAdapter(getSupportFragmentManager());
+        adapter.addFrg(new walletfragment<>(),"بودجه");
+        adapter.addFrg(new usedfragment<>(),"هزینه");
+        adapter.addFrg(new homefragment<>(),"خانه");
+        adapter.addFrg(new incomefragment<>(),"درآمد");
+        adapter.addFrg(new logoutfragment<>(),"خروج");
+        vPager.setAdapter(adapter);
+        tbLayout.setupWithViewPager(vPager);
     }
-
-    private BottomNavigationView.OnNavigationItemSelectedListener navlistener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
-
-                    switch (item.getItemId()){
-
-                        case R.id.home:
-                            selectedFragment=new homefragment<>();
-                            break;
-
-                        case R.id.wallet:
-                            selectedFragment=new walletfragment<>();
-                            break;
-
-                        case R.id.income:
-                            selectedFragment=new incomefragment<>();
-                            break;
-
-                    }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
-
-                    return true;
-                }
-            };
-
-
 
         public class OnSwipeTouchListener implements OnTouchListener {
 
@@ -122,8 +111,8 @@ public class dashboardActivity extends AppCompatActivity {
 
             public void onSwipeBottom() {
             }
+
+
         }
 
-    private class OnNavigationItemSelectedListener {
-    }
 }

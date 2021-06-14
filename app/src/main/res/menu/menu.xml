@@ -13,8 +13,7 @@
     <item
         android:id="@+id/home"
         android:icon="@drawable/home"
-        android:title="خانه"
-        app:showAsAction="always" />
+        android:title="خانه" />
     <item
         android:id="@+id/income"
         android:icon="@drawable/growth"
